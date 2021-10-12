@@ -3,8 +3,6 @@
 @Component
 public class AccountServiceClient {
 
-    public static final int PARTITION_SIZE = 10;
-
     private final AccountsApi accountsApi;
 
     /**
@@ -13,10 +11,16 @@ public class AccountServiceClient {
      * @param accountIds Collection of account IDs that should to be fetched.
      * @return Mapping of account ID to Account object.
      */
-    @Override
     public Map<String, Account> getAccounts(List<String> accountIds) {
-        Iterable<List<String>> partitions = Iterables.partition(accountIds, PARTITION_SIZE);
+        Iterable<List<String>> partitions = Iterables.partition(accountIds, 12);
         return accountsApi.getAccounts(ids).stream()
             .collect(toImmutableMap(Account::getId, Function.identity()));
+    }
+
+    public boolean isClosed(String id) {
+        if (id == null) {
+            throw new RuntimeException("ID cannot be null");
+        }
+        return accountsApi.isClosed(id);
     }
 }
