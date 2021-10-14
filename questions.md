@@ -14,9 +14,9 @@
 
 # Questions about `dto` package
 1. What are the problems with the fields defined?
-2. What do you think about the inheritance implemented?
+2. What do you think about the inheritance implemented, is it proper or something(s) not good?
 
 # Questions about `CustomerService.java`
 1. Is the class properly configured?
 2. How would you have implemented the `getNextTierPromotion(Customer)` method?
-3. Is there anything you would do in another way? If so, why?
+3. What do you think about the other parts of the class? How would you refactor?
