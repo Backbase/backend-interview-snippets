@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AccountRepository extends JpaRepository<AccountEntity, Long> {
 
-    List<AccountEntity> findAllByTypeIdAndClosedFalse();
+    List<AccountEntity> findAllByTypeIdAndClosedFalse(long typeId);
 }

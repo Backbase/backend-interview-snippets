@@ -1,16 +1,18 @@
+package business;
+
 import java.util.Objects;
 
 public class Account {
-    private String id;
+    private Long id;
     private String name;
     private Double availableBalance;
     private boolean closed;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
