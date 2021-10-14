@@ -11,3 +11,12 @@
 # Questions about `Account.java`
 1. Are all fields defined with appropriate types?
 2. How would you implement the `equals` method?
+
+# Questions about `dto` package
+1. What are the problems with the fields defined?
+2. What do you think about the inheritance implemented?
+
+# Questions about `CustomerService.java`
+1. Is the class properly configured?
+2. How would you have implemented the `getNextTierPromotion(Customer)` method?
+3. Is there anything you would do in another way? If so, why?

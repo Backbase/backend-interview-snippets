@@ -27,7 +27,7 @@ public class CustomerService {
      * The final period is calculated as (base period) x (tier factor) months
      *
      * @param customer customer whose next tier promotion is to be calculated
-     * @return Next tier promotion time
+     * @return promotion time for the next tier
      */
     public Instant getNextTierPromotion(Customer customer) {
         if (customer instanceof RetailCustomer) {
