@@ -31,3 +31,21 @@
 1. How can we make sure only valid values are provided through configuration properties?
 2. Which validation annotations would you use to ensure the rules documented in javadoc are enforced?
 3. How can we provide a default value for `portNumber`?
+
+# Questions about `dto` package
+1. What are the problems with the fields defined?
+    -> Tier looks like an enum
+2. What do you think about the inheritance implemented, is it proper or something(s) not good?
+    -> Common fields should be in `Customer`
+
+# Questions about `CustomerService.java`
+1. Is the class properly configured?
+    -> @Configuration -> @Service
+2. How would you have implemented the `getNextTierPromotionTime(Customer)` method?
+    -> Using polymorphism instead of if-else
+    -> (Optional) Even instead of the service implementation, it can be provided inside the Customer classes.
+        with a `getNextTierPromotionTime()` method.
+3. What do you think about the other parts of the class? How would you refactor?
+    -> Tier can be an Enum with attributes (double promotionFactor, boolean isPromotable)
+    -> Tier list is redundant
+    -> Other methods could be removed after
