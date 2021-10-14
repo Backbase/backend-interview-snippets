@@ -32,14 +32,20 @@ public class CustomerService {
     public Instant getNextTierPromotion(Customer customer) {
         if (customer instanceof RetailCustomer) {
             var retailCustomer = ((RetailCustomer) customer);
+            if (!isPromotable(retailCustomer.getTier())) {
+                throw new IllegalArgumentException("The tier is not promotable: " + retailCustomer.getTier());
+            }
             var basePromotionInMonths = 24;
             var promotionInMonths = (int)(basePromotionInMonths * getTierPromotionFactor(retailCustomer.getTier()));
             var promotesEvery = Period.ofMonths(promotionInMonths);
             return ((RetailCustomer) customer).getLastPromotion().plus(promotesEvery);
         } else if (customer instanceof BusinessCustomer) {
-            var retailCustomer = ((RetailCustomer) customer);
+            var businessCustomer = ((BusinessCustomer) customer);
+            if (!isPromotable(businessCustomer.getTier())) {
+                throw new IllegalArgumentException("The tier is not promotable: " + businessCustomer.getTier());
+            }
             var basePromotionInMonths = 12;
-            var promotionInMonths = (int)(basePromotionInMonths * getTierPromotionFactor(retailCustomer.getTier()));
+            var promotionInMonths = (int)(basePromotionInMonths * getTierPromotionFactor(businessCustomer.getTier()));
             var promotesEvery = Period.ofMonths(promotionInMonths);
             return ((BusinessCustomer) customer).getLastPromotion().plus(promotesEvery);
         }
@@ -67,5 +73,15 @@ public class CustomerService {
         }
 
         throw new IllegalArgumentException("Tier value is not correct. Available tiers: " + tiers);
+    }
+
+    /**
+     * Returns true if the tier is promotable, false otherwise.
+     *
+     * @param tier tier
+     * @return promotability of the given tier
+     */
+    private boolean isPromotable(String tier) {
+        return !"EXCLUSIVE".equals(tier);
     }
 }
