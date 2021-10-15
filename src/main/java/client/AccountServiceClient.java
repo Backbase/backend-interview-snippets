@@ -26,7 +26,7 @@ public class AccountServiceClient {
      * Fetches all accounts whose IDs are specified in accountIds.
      *
      * @param accountIds Collection of account IDs that should to be fetched.
-     * @return Mapping of account ID to business.Account object.
+     * @return Mapping of account ID to Account object.
      */
     public Map<Long, Account> getAccounts(List<String> accountIds) {
         Iterable<List<String>> partitions = Iterables.partition(accountIds, PARTITION_SIZE);
