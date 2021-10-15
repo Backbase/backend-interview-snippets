@@ -11,3 +11,14 @@
 # Questions about `Account.java`
 1. Are all fields defined with appropriate types? -> `Double` shouldn't be used for monetary values
 2. How would you implement the `equals` method? -> see the code
+
+# Questions about `ddl.sql`
+1. Are relationships modelled correctly? -> account is missing an FK to `account_type` table
+
+# Questions about `AccountRepository.java`
+1. Is the query going to perform well for a large number of Accounts? -> no, it's missing indexes
+2. What would happen if we have 10 million open Accounts of the same type in the database? -> out of memory error
+
+# Questions about `AccountEntity.java`
+1. Are all JPA annotations used correctly? Any missing? -> `@GeneratedValue` is missing
+2. Is the relationship mapped in the ideal way? -> no, we should model account type with a separate entity class
