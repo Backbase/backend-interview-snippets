@@ -1,3 +1,6 @@
+package client;
+
+import business.Account;
 import java.util.List;
 
 public class AccountsApi {

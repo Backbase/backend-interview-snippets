@@ -1,5 +1,8 @@
+package client;
+
 import static com.google.common.collect.ImmutableMap.toImmutableMap;
 
+import business.Account;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Streams;
 import java.util.Collection;
@@ -10,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AccountServiceClient {
+
+    private static final int PARTITION_SIZE = 12;
 
     private final AccountsApi accountsApi;
 
@@ -23,8 +28,8 @@ public class AccountServiceClient {
      * @param accountIds Collection of account IDs that should to be fetched.
      * @return Mapping of account ID to Account object.
      */
-    public Map<String, Account> getAccounts(List<String> accountIds) {
-        Iterable<List<String>> partitions = Iterables.partition(accountIds, 12);
+    public Map<Long, Account> getAccounts(List<String> accountIds) {
+        Iterable<List<String>> partitions = Iterables.partition(accountIds, PARTITION_SIZE);
         return Streams.stream(partitions)
             .map(accountsApi::getAccounts)
             .flatMap(Collection::stream)

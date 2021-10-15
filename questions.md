@@ -22,3 +22,7 @@
 # Questions about `AccountEntity.java`
 1. Are all JPA annotations used correctly? Any missing? -> `@GeneratedValue` is missing
 2. Is the relationship mapped in the ideal way? -> no, we should model account type with a separate entity class
+
+# Questions about `AccountController.java`
+1. Is this a good way to separate the code in layers? -> no, everything is in the controller class
+2. How would separate the implementation in separate layers? -> see the code
