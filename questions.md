@@ -26,3 +26,7 @@
 # Questions about `AccountController.java`
 1. Is this a good way to separate the code in layers? -> no, everything is in the controller class
 2. How would separate the implementation in separate layers? -> see the code
+
+# Questions about `ServiceConfiguration.java`
+1. How can we make sure only valid values are provided through configuration properties?
+2. Which validation annotations would you use to ensure the rules documented in javadoc are enforced?
