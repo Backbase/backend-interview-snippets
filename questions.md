@@ -30,3 +30,4 @@
 # Questions about `ServiceConfiguration.java`
 1. How can we make sure only valid values are provided through configuration properties?
 2. Which validation annotations would you use to ensure the rules documented in javadoc are enforced?
+3. How can we provide a default value for `portNumber`?
