@@ -9,8 +9,5 @@ CREATE TABLE account (
   type_id INT NOT NULL,
   name VARCHAR(255) NOT NULL,
   closed BIT NOT NULL,
-  CONSTRAINT pk_account PRIMARY KEY (id),
-  CONSTRAINT fk_account_type FOREIGN KEY (type_id) REFERENCES account_type (id)
+  CONSTRAINT pk_account PRIMARY KEY (id)
 );
-
-CREATE INDEX idx_account ON account (type_id, closed);

@@ -1,8 +1,6 @@
 package repository;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+// import statements
 
 @Entity
 public class AccountTypeEntity {

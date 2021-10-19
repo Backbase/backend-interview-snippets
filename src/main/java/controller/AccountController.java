@@ -1,30 +1,34 @@
 package controller;
 
 import business.Account;
-import business.AccountEngine;
-import client.AccountCreationRequest;
 import java.util.List;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.stream.Collectors;
+import repository.AccountEntity;
+import repository.AccountRepository;
+// more import statements
 
 @RestController("/v1/accounts")
 public class AccountController {
 
-    private final AccountEngine accountEngine;
+    private final AccountRepository accountRepository;
 
-    public AccountController(AccountEngine accountEngine) {
-        this.accountEngine = accountEngine;
+    public AccountController(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Account> getOpenAccounts(long typeId) {
-        return accountEngine.findOpenAccounts(typeId);
+        return accountRepository.findAllByTypeIdAndClosedFalse(typeId).stream()
+            .map(this::mapFromEntity)
+            .collect(Collectors.toList());
+    }
+
+    public Account mapFromEntity(AccountEntity entity) {
+        Account account = new Account();
+        account.setId(entity.getId());
+        account.setName(entity.getName());
+        account.setClosed(false);
+        return account;
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
