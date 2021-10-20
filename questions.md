@@ -26,8 +26,9 @@
 # Questions about `AccountController.java`
 1. Is this a good way to separate the code in layers? -> no, everything is in the controller class
 2. How would separate the implementation in separate layers? -> see the code
-3. Is this controller following REST best practices? How would you fix it? -> see the code
-4. How would you validate the request? -> see the code
+3. How would you validate the request? -> see the code
+4. Is this controller following REST best practices? How would you fix it? -> see the code
+5. How would you introduce API versioning in this case? -> see the code
 
 # Questions about `ServiceConfiguration.java`
 1. How can we make sure only valid values are provided through configuration properties?
