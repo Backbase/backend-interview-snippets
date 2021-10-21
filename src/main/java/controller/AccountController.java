@@ -1,13 +1,14 @@
 package controller;
 
 import business.Account;
+import client.AccountCreationRequest;
 import java.util.List;
 import java.util.stream.Collectors;
 import repository.AccountEntity;
 import repository.AccountRepository;
 // more import statements
 
-@RestController("/v1/accounts")
+@RestController("/accounts")
 public class AccountController {
 
     private final AccountRepository accountRepository;
@@ -31,9 +32,9 @@ public class AccountController {
         return account;
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Long> createAccount(@Valid @NotNull AccountCreationRequest request) {
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public long createAccount(AccountCreationRequest request) {
         // implementation
-        return ResponseEntity.status(HttpStatus.CREATED).body(1L); // Account ID
+        return 1L; // Account ID
     }
 }
