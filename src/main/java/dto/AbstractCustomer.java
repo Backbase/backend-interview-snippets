@@ -1,6 +1,6 @@
 package dto;
 
-import enumaration.Tier;
+import enumeration.Tier;
 import java.time.Instant;
 import lombok.Data;
 

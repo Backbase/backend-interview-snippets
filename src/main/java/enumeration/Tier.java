@@ -1,4 +1,4 @@
-package enumaration;
+package enumeration;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

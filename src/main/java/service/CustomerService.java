@@ -17,7 +17,7 @@ public class CustomerService {
      * @param customer customer whose next tier promotion is to be calculated
      * @return promotion time for the next tier
      */
-    public Instant getNextTierPromotionTime(AbstractCustomer customer) {
+    public <T extends AbstractCustomer> Instant getNextTierPromotionTime(T customer) {
         if (!customer.getTier().isPromotable()) {
             throw new NotPromotableTierException();
         }
