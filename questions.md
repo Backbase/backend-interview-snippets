@@ -39,6 +39,7 @@
 # Questions about `AccountEntity.java`
 1. Are all JPA annotations used correctly? Any missing?
     -> `@GeneratedValue` is missing
+    
 2. Is the relationship mapped in the ideal way?
     -> no, we should model account type with a separate entity class
 
@@ -48,6 +49,15 @@
 
 2. How would separate the implementation in separate layers?
     -> see the code
+
+3. How would you validate the request?
+    -> see the code
+    
+4. Is this controller following REST best practices? How would you fix it?
+    -> see the code
+    
+5. How would you introduce API versioning in this case?
+      -> see the code
 
 # Questions about `ServiceConfiguration.java`
 1. How can we make sure only valid values are provided through configuration properties?
