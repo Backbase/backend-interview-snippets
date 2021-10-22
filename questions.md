@@ -57,14 +57,17 @@
     -> see the code
     
 5. How would you introduce API versioning in this case?
-      -> see the code
+    -> see the code
 
 # Questions about `ServiceConfiguration.java`
 1. How can we make sure only valid values are provided through configuration properties?
+    -> add the @Validated annotation at class level and validation annotations to each field
 
 2. Which validation annotations would you use to ensure the rules documented in javadoc are enforced?
+    -> see the code
 
 3. How can we provide a default value for `portNumber`?
+    -> just initialize the field with a default value
 
 # Questions about `dto` package
 1. What are the problems with the fields defined?
