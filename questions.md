@@ -4,31 +4,23 @@
 
 # Questions about `AccountServiceClient.java`
 1. There is a Spring configuration issue in this class, what is it?
-2. Is the logic correct in `getAccounts` method?
-3. How would you fix the logic in `getAccounts` method?
-4. What's wrong in the `isClosed` method?
+2. Is the logic correct in `getAccounts` method? How can we fix it?
+4. There is a bad coding practice in the `isClosed` method, can you spot it?
 
 # Questions about `Account.java`
 1. Are all fields defined with appropriate types?
 2. How would you implement the `equals` method?
 
 # Questions about `ddl.sql`
-1. Are relationships modelled correctly?
+1. Is the one to many relationship modelled correctly?
 
 # Questions about `AccountRepository.java`
-1. Is the query going to perform well for a large number of Accounts?
-2. What would happen if we have 10 million open Accounts of the same type in the database?
-
-# Questions about `AccountEntity.java`
-1. Are all JPA annotations used correctly? Any missing?
-2. Is the relationship mapped in the ideal way?
+1. Is the query going to perform well for a large number of Accounts? How can we make sure it does?
 
 # Questions about `AccountController.java`
-1. Is this a good way to separate the code in layers?
-2. How would separate the implementation in separate layers?
-3. How would you validate the request?
-4. Is this controller following REST best practices? How would you fix it?
-5. How would you introduce API versioning in this case?
+1. How would separate the implementation in separate layers?
+2. Is this controller following REST best practices? How would you fix it?
+3. How would you introduce API versioning in this case?
 
 # Questions about `ServiceConfiguration.java`
 1. How can we make sure only valid values are provided through configuration properties?
