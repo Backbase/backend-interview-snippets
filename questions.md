@@ -1,6 +1,6 @@
 # Questions about `pom.xml`
 1. There is a mistake in the dependencyManagement/dependency sections, what is it?
-2. What's the command to make sure the plugin configured inside the `static` profile is executed during build?
+2. What's the command to activate the `static` profile? How does maven decide to run `frontend-maven-plugin` during the build?
 
 # Questions about `AccountServiceClient.java`
 1. There is a Spring configuration issue in this class, what is it?
