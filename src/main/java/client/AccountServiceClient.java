@@ -2,6 +2,12 @@ package client;
 
 // import statements for java.util, Google Guava and AccountsApi classes
 
+import business.Account;
+import com.google.common.collect.Iterables;
+import java.util.List;
+import java.util.Map;
+import org.springframework.stereotype.Component;
+
 @Component
 public class AccountServiceClient {
 
@@ -15,7 +21,7 @@ public class AccountServiceClient {
      */
     public Map<Long, Account> getAccounts(List<String> accountIds) {
         Iterable<List<String>> partitions = Iterables.partition(accountIds, 12);
-        return accountsApi.getAccounts(ids).stream()
+        return accountsApi.getAccounts(accountIds).stream()
             .collect(toImmutableMap(Account::getId, Function.identity()));
     }
 
