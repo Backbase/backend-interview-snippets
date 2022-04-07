@@ -8,7 +8,7 @@ import repository.AccountEntity;
 import repository.AccountRepository;
 import repository.TransferRepository;
 
-@RestController("/v1/transfer")
+@RestController("/v1/transfers")
 public class TransferController {
 
     private AccountRepository accountRepository;
