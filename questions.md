@@ -89,3 +89,13 @@
     -> Tier can be an Enum with attributes (double promotionFactor, boolean isPromotable)
     -> Tier list is redundant
     -> Other methods could be removed after
+    
+# Questions about 'API-endpoints.md'
+The first reaction to look for is "....ouch"
+
+There are several ways you can use this in a question: 
+* You can ask for direct feedback (what is wrong?, how to do better? Do you know "REST"?) purely technical.
+* You can introduce a "This is suggested by colleague - how do you react" or "Business Analyst is introducing new feature and is 'helping' the team by supplying their API design" so you can get both tech and soft-skill like providing feedback , asking question (Do we ever promote all employees?)
+* Is something missing (it could use a GET maybe?)
+* You can introduce as "this is the api of existing service, we want to improve, how?" and look for awareness of breaking changes.
+* etc.
