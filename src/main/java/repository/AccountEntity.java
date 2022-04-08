@@ -14,6 +14,8 @@ public class AccountEntity {
     @GeneratedValue
     private Long id;
 
+    private long accountHolderId;
+
     @ManyToOne
     @JoinColumn(name = "type_id")
     private AccountTypeEntity type;
@@ -32,12 +34,20 @@ public class AccountEntity {
         this.id = id;
     }
 
-    public Long getTypeId() {
-        return typeId;
+    public long getAccountHolderId() {
+        return accountHolderId;
     }
 
-    public void setTypeId(Long typeId) {
-        this.typeId = typeId;
+    public void setAccountHolderId(long accountHolderId) {
+        this.accountHolderId = accountHolderId;
+    }
+
+    public AccountTypeEntity getType() {
+        return type;
+    }
+
+    public void setType(AccountTypeEntity type) {
+        this.type = type;
     }
 
     public String getName() {
