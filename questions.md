@@ -35,23 +35,9 @@
 1. Is the bean stereotype correct?
 2. How would you have implemented the `getNextTierPromotionTime(Customer)` method?
 3. What do you think about the other parts of the class? How would you refactor?
-    -> Tier can be an Enum with attributes (double promotionFactor, boolean isPromotable)
-    -> Tier list is redundant
-    -> Other methods could be removed after
     
 # Questions about 'API-endpoints.md'
-The first reaction to look for is "....ouch"
-
-There are several ways you can use this in a question:
-* You can ask for direct feedback (what is wrong?, how to do better? Do you know "REST"?) purely technical.
-* You can introduce a "This is suggested by colleague - how do you react" or "Business Analyst is introducing new feature and is 'helping' the team by supplying their API design" so you can get both tech and soft-skill like providing feedback , asking question (Do we ever promote all employees?)
-* Is something missing (it could use a GET maybe?)
-* You can introduce as "this is the api of existing service, we want to improve, how?" and look for awareness of breaking changes.
-* etc.
 
 # Questions about security
 1. The security department said that `TransferController` has security vulnerabilities, can you spot them and 
 suggest fixes? (show the presence of `TokenSecurityUtils.getCurrentUser()` to the candidate)
-    -> It's possible to get transfers of accounts that don't belong to the current user
-    -> We should use `TokenSecurityUtils.getCurrentUser()` to find out the current user and fetch data only if it's
-       related to them
