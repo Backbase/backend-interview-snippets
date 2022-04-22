@@ -1,0 +1,15 @@
+type: object
+additionalProperties: false
+properties:
+  id:
+    description: Employee ID
+    type: integer
+  name:
+    description: Employee name
+    type: string
+  position:
+    description: Employee position
+    type: string
+required:
+  - name
+  - position

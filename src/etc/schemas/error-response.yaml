@@ -1,0 +1,8 @@
+type: object
+additionalProperties: false
+properties:
+  message:
+    description: Error message
+    type: string
+required:
+  - message
