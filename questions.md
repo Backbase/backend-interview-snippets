@@ -36,7 +36,7 @@
 2. How would you have implemented the `getNextTierPromotionTime(Customer)` method?
 3. What do you think about the other parts of the class? How would you refactor?
     
-# Questions about 'API-endpoints.md' (use your IDE's support for folding code to present all endpoints in a single page)
+# Questions about 'openapi.yaml' (use your IDE's support for folding code to present all endpoints in a single page)
 1. The business analyst has decided to help the team by supplying an API spec, what do you think about its design?
 
 # Questions about security
