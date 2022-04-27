@@ -41,3 +41,7 @@
 # Questions about security
 1. The security department said that `TransferController` has security vulnerabilities, can you spot them and 
 suggest fixes? (show the presence of `TokenSecurityUtils.getCurrentUser()` to the candidate)
+
+# Questions about `CustomerServiceTest`
+1. Is the test correct? How can we fix it?
+2. How would you implement testing more combinations of tier values and customer types ?
