@@ -1,0 +1,153 @@
+openapi: 3.0.3
+info:
+  title: Employess API
+  version: 1.0.0
+  description: Operations on employee data
+tags:
+  - name: employees
+paths:
+  /addNewEmployee:
+    post:
+      operationId: addNewEmployee
+      description: Adds a new employee to the system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee has been added
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+  /updateEmployee:
+    post:
+      operationId: updateEmployee
+      description: Updates an employee with the given ID in the request body
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee has been updated
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+  /deleteEmployee:
+    post:
+      operationId: deleteEmployee
+      description: Deletes an employee with the given ID in the request body
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee has been deleted
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+  /deleteAllEmployees:
+    post:
+      operationId: deleteAllEmployees
+      description: Deletes all employees from the system
+      responses:
+        '200':
+          description: Employees have been deleted
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+  /promoteEmployee:
+    post:
+      operationId: promoteEmployee
+      description: Promotes an employee with the given ID in the request body
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee has been promoted
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+  /promoteAllEmployees:
+    post:
+      operationId: promoteAllEmployees
+      description: Promotes all employees
+      responses:
+        '200':
+          description: Employees have been promoted
+        '400':
+          $ref: '#/components/responses/400'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
+        '500':
+          $ref: '#/components/responses/500'
+components:
+  schemas:
+    EmployeeRequest:
+      $ref: schemas/employee.yaml
+    ErrorResponse:
+      $ref: schemas/error-response.yaml
+  responses:
+    '400':
+      description: If one or more request parameters don't comply with the specification
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '401':
+      description: If the authentication credentials provided are invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '403':
+      description: If the user doesn't have priviledge to execute the action
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    '500':
+      description: If a runtime error occurs while processing the request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
