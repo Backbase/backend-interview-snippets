@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.4.10</version>
+        <version>4.0.6</version>
         <relativePath />
     </parent>
 
@@ -15,9 +15,9 @@
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>11</java.version>
-        <immutables.version>2.8.8</immutables.version>
-        <lombok.version>1.18.22</lombok.version>
+        <java.version>25</java.version>
+        <immutables.version>2.12.2</immutables.version>
+        <lombok.version>1.18.44</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>30.1.1-jre</version>
+            <version>33.6.0-jre</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -63,6 +63,23 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
